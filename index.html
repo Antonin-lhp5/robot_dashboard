@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="public/css/style.css" />
+    <link rel="stylesheet" href="public/css/charts.min.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script defer src="/public/js/index.js"></script>
+    <title>Tableau de bord - Robot</title>
+  </head>
+
+  <body>
+    <nav class="flex justify-between px-16 sm:px-20 align-items-center">
+      <span class="mr-8 text-24"><i class="ph ph-robot"></i></span>
+      <ul
+        class="sm:justify-between sm:align-items-center gap-16 text-24 sm:flex sm:text-16"
+      >
+        <span class="sm:hidden mobile-logo text-24 flex align-items-center"
+          ><i class="ph ph-robot"></i
+        ></span>
+        <li><a href="Accueil">Accueil</a></li>
+        <li><a href="compte">Mon compte</a></li>
+        <li><a href="programmes">Programmes</a></li>
+        <li><a href="maintenance">Maintenance</a></li>
+        <li><a href="paramètres">Paramètres</a></li>
+      </ul>
+      <button
+        class="burger-button sm:hidden"
+        type="button"
+        role="button"
+        aria-label="open/close navigation"
+      >
+        <i></i>
+      </button>
+    </nav>
+
+    <main>
+      <div class="container">
+        <div id="header" class="layout grid grid-cols-1 md:grid-cols-5 gap-36">
+          <section class="md:col-span-2">
+            <div class="radiant">
+              <h1 class="text-36">Produit</h1>
+              <div class="layout-img">
+                <div class="image-produit">
+                  <img
+                    src="/public/img/robot-produit.jpg"
+                    alt="Robot aspirateur de la marque Xiaomi, modèle blanc"
+                    title="Robot aspirateur"
+                  />
+                </div>
+              </div>
+
+              <h2 class="">Xiaomi Mi Robot Vaccum Mop 2 Pro White EU</h2>
+              <small class="">ID: 63270</small>
+            </div>
+          </section>
+          <section id="active">
+            <h1 class="hidden sm:block text-36">Modes</h1>
+            <div class="grid grid-cols-2 md:grid-cols-1 gap-16">
+              <div class="flex align-items-center">
+                <button class="active-button">
+                  <i class="ph-fill ph-lightning"></i>
+                </button>
+                <span class="ml-12 text-bold active-text">En nettoyage</span>
+              </div>
+              <div class="flex align-items-center">
+                <button class="active-button">
+                  <i class="ph-bold ph-leaf"></i>
+                </button>
+                <span class="ml-12 text-bold active-text">Eco</span>
+              </div>
+              <div class="flex align-items-center">
+                <button class="active-button">
+                  <i class="ph-bold ph-path"></i>
+                </button>
+                <span class="ml-12 text-bold active-text">Smart</span>
+              </div>
+              <div class="flex align-items-center">
+                <button class="not-active-button">
+                  <i class="ph ph-polygon"></i>
+                </button>
+                <span class="ml-12 text-bold not-active-text"
+                  >Suivi de mur</span
+                >
+              </div>
+            </div>
+          </section>
+          <section id="activite">
+            <div>
+              <h1 class="text-36">En cours</h1>
+              <div
+                class="grid grid-cols-2 md:grid-cols-1 text-center md:text-left"
+              >
+                <div>
+                  <p class="text-36 text-bold">9 min</p>
+                  <p>Temps restant</p>
+                </div>
+                <div>
+                  <p class="text-36 text-bold">12 m²</p>
+                  <p>Surface nettoyée</p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section>
+            <h1 class="text-36 flex align-items-center gap-10">
+              78% <i class="ph-fill ph-battery-vertical-full text-24"></i>
+            </h1>
+            <div class="battery-row grid grid-cols-4 gap-20">
+              <span class="low-battery"></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <section id="sub-layout" class="grid grid-cols-1 md:grid-cols-2 gap-20">
+        <div id="maintenance" >
+          <h1 class="text-36">Maintenance</h1>
+          <table
+            class="charts-css bar multiple show-labels data-spacing-5"
+            id="chart1"
+          >
+            <caption>
+              Front End Developer Salary
+            </caption>
+            <tbody>
+              <tr>
+                <th scope="row">Filtre</th>
+                <td style="--size: calc(82 / 100)">
+                  <span class="data">72%</span>
+                </td>
+                <td style="--size: calc(82 / 100)">
+                  <span class="data">68 heures</span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Brossettes latérales</th>
+                <td style="--size: calc(86 / 100)">
+                  <span class="data">86%</span>
+                </td>
+                <td style="--size: calc(86 / 100)">
+                  <span class="data">38 heures</span>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Brosse principale</th>
+                <td style="--size: calc(93 / 100)">
+                  <span class="data">93%</span>
+                </td>
+                <td style="--size: calc(93 / 100)">
+                  <span class="data">256 heures</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <aside id="map">
+            <div class="map-user grid-map"></div>
+            <div class="map-user radiant-map"></div>
+            <div class="edit-navbar text-right">
+              <a href="#">
+                monplan2d <i class="ph-bold ph-pencil-simple"></i></a>
+            </div>
+            <div id="user-map" class="mx-16 py-36 flex justify-center">
+              <img 
+              class=""
+              src="/public/img/myhouse.svg"
+              alt="Plan de votre maison, réalisé avec l'application du site web"
+              title="Votre plan"
+            />
+            </div>
+            
+          </aside>
+          <div class="md:col-end-3 pt-20">
+            <ul class="is-unstyled text-14 flex gap-10 justify-center md:justify-start">
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Aide</a></li>
+              <li><a href="#">Mentions légales</a></li>
+            </ul>
+          </div>
+      </section>
+    
+    </main>
+  </body>
+</html>

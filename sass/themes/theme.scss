@@ -1,0 +1,270 @@
+/* Navbar */
+nav {
+  background-color: $black;
+  height: 4rem;
+  overflow: hidden;
+  position: relative;
+  z-index: 99;
+}
+
+nav a,
+span {
+  color: $white;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: $primary;
+  text-decoration: none;
+}
+
+@include respond-to("small") {
+  nav {
+    position: fixed;
+    width: 100%;
+  }
+
+  nav ul {
+    position: fixed;
+    left: -100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: $black;
+    width: calc(100% - 60px);
+    height: 100%;
+    padding: 0px $spacer $spacer 2rem;
+    font-weight: 700;
+    transition: 0.3s;
+  }
+
+  nav ul.is-opened {
+    left: 0;
+  }
+}
+
+.mobile-logo {
+  height: 5rem;
+}
+
+/* main */
+.container {
+  background-color: $black;
+  color: $white;
+  width: 100%;
+}
+
+/* header */
+.layout {
+  padding: 1.5rem 1rem;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+#header h1, h2 {
+  color: $white !important;
+}
+
+/* mobile header*/
+@include respond-to("small") {
+  #header  {
+   padding-top: 3rem;
+  }
+}
+
+/* image produit */
+.layout-img {
+  width: 100%;
+  padding-bottom: 1rem;
+}
+
+.image-produit img {
+  width: 80%;
+  height: 190px;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+@include respond-to("medium") {
+  .image-produit img {
+    width: 100%;
+  }
+}
+
+/* active button */
+#active button {
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  padding: 0 0.75rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: all 0.5s ease-out;
+}
+
+#active * span {
+  user-select: none;
+}
+
+// button no activate
+.not-active-button {
+  background-color: $gray-700;
+  color: $white;
+
+  &:hover {
+    background-color: $primary;
+    color: $black;
+    ~ .not-active-text {
+      color: $white;
+    }
+  }
+}
+
+.not-active-text {
+  color: $gray-400;
+  transition: color 0.2s ease-out;
+}
+
+// button is activate
+.active-button {
+  background-color: $primary;
+  color: $black;
+
+  &:hover {
+    background-color: $gray-700;
+    color: $white;
+    ~ .active-text {
+      color: $gray-400;
+    }
+  }
+}
+
+.active-text {
+  color: $white;
+  transition: color 0.2s ease-out;
+}
+
+/* Batterie */
+.battery-row > span.low-battery {
+  background-color: $gray-600;
+}
+
+.battery-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.battery-row > span {
+  width: 100%;
+  background-color: $primary;
+  margin-top: 0;
+  height: 50px;
+}
+
+/* sub layout */
+#sub-layout {
+  padding: 0 1rem 1.5rem 1rem;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@include respond-to("medium") {
+  #sub-layout {
+    padding: 0 0 1rem 0;
+    width: 100%;
+  }
+}
+
+/* Maintenance */
+#maintenance {
+  padding-top: 1.5rem;
+}
+
+#maintenance h1 {
+  padding-left: 1rem;
+}
+
+/* chart */
+#chart1.bar {
+  height: 390px;
+  --color-1: #c2c5ff;
+  --color-2: #dadcff;
+}
+
+#chart1.bar {
+  --labels-size: 100px;
+}
+
+.data {
+  padding-right: 10px;
+  color: $black;
+  font-weight: bold;
+}
+
+#datasets-example-1 .column {
+  height: 300px;
+  max-width: 800px;
+}
+#datasets-example-1 .legend {
+  margin-block-start: 1rem;
+  justify-content: center;
+}
+
+.legend {
+  margin-top: 1rem !important;
+  color: $white;
+  background-color: $black;
+  border: none !important;
+}
+
+.bar {
+  --sizes: 5rem;
+}
+
+/* map */
+#map {
+  background-color: $primary;
+  position: relative;
+  z-index: 1;
+  height: 100%;
+}
+
+#map > aside {
+  padding: 0!important;
+}
+
+.map-user {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+.map-user:nth-child(1) {
+  background-image: url(../../public/img/grid.svg);
+}
+
+.map-user:nth-child(2) {
+  background: radial-gradient(circle closest-side, #edeeff, transparent);
+  opacity: 0.5;
+  height: 100%;
+}
+
+#map a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration-line: underline;
+  color: $black;
+}
+
+.ph-pencil-simple {
+  background-color: $black;
+  color: white;
+  padding: 1rem;
+}
